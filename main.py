@@ -32,7 +32,7 @@ def setup(bot):
     print("loaded sample cog")
     bot.add_cog(SampleCog(bot))
 """
-f = open("extensions/base.json", "w")
+f = open("extensions/base.py", "w")
 f.write(base_cog)
 f.close()
 
