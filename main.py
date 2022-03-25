@@ -18,7 +18,7 @@ config = {
 
 bot = commands.Bot(command_prefix=config["prefix"], intents=discord.Intents.all())
 
-print("Ready to start raid tool from " + __file__)
+print("Ready to start bot maker from " + __file__)
 
 
 def run_choices(choice):
