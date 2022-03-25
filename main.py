@@ -9,6 +9,33 @@ import emoji
 import requests
 import dotenv
 
+if not "extensions" in os.listdir():
+    os.mkdir("extensions")
+if not os.path.isdir("extensions"):
+    os.remove("extensions")
+    os.mkdir("extensions")
+
+
+base_cog = """
+import discord
+from discord.ext import commands
+
+class SampleCog(commands.Cog):
+    def __init__(self, bot):
+        self.bot=bot
+    
+    @commands.command()
+    async def sample(self, ctx):
+        await ctx.send("Hello World")
+
+def setup(bot):
+    print("loaded sample cog")
+    bot.add_cog(SampleCog(bot))
+"""
+f = open("extensions/base.json", "w")
+f.write(base_cog)
+f.close()
+
 PLUGINS_REPO = "https://raw.githubusercontent.com/BotsCord/plugins/main/plugins.json"
 
 config = {
