@@ -1,5 +1,6 @@
 from InquirerPy import inquirer
 import asyncio
+import json
 import os
 from discord.ext import commands
 import discord
@@ -7,7 +8,7 @@ import traceback
 import emoji
 import requests
 
-PLUGINS_REPO = "http://localhost:8080/plugins"
+PLUGINS_REPO = "https://raw.githubusercontent.com/BotsCord/plugins/main/plugins.json"
 
 config = {
     "token": "",
@@ -50,8 +51,8 @@ def run_choices(choice):
     if choice == "Install plugins":
         r = requests.get(PLUGINS_REPO)
         
-        data = r.json()
-        plugins = data["plugins"]
+        plugins = json.loads(r.text)
+        
         to_install = inquirer.checkbox(message="Select the plugins you want to install", choices=[x["name"] for x in plugins]).execute()
         urls = [x["url"] for x in plugins if x["name"] in to_install]
         for x in range(len(urls)):
