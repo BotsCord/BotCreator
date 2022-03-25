@@ -34,7 +34,7 @@ jobs:
       - name: Set archive name
         run: |
           ARCHIVE_NAME=${{ env.project-name }}-${{ matrix.os }}-`git describe --always`
-          GHASH=${{ env.project-name }}-`git describe --always`
+          GHASH=${{ env.project-name }}-${{ matrix.os }}-`git describe --always`
           
           echo "Archive name set to: $ARCHIVE_NAME"
           echo "archive-name=$ARCHIVE_NAME" >> $GITHUB_ENV
@@ -72,7 +72,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: automated-builds
-          path: "dist/*.exe"
+          path: "dist/*"
           retention-days: 7
           if-no-files-found: error
             # If a tag is pushed then a new archives are uploaded to GitHub Releases automatically.
