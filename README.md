@@ -2,8 +2,8 @@
 Create bots without code. Just use a GUI and you're good to go!
 ## Hosting
 THere are two ways
-1. (currently not working): releases, all the files are in the releases tab
-2. Run (you need python). Run pip (or pip3) install -r requirements in the bot directory. Run python (or python3) main.py and you're good to go.
+1. releases: all the files are in the releases tab
+2. Run (you need python): run pip (or pip3) install -r requirements in the bot directory. Run python (or python3) main.py and you're good to go.
 
 ## Using
 - In multiple-choice menu, you use arrow keys to move and <SPACE> to select then <ENTER> to go
