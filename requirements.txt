@@ -2,3 +2,4 @@ inquirerpy
 emoji
 discord
 python_dotenv
+requests
