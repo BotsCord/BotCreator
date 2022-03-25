@@ -12,3 +12,6 @@ THere are two ways
   
 # Contributing
 Go to https://github.com/BotsCord/plugins and open a PR
+
+## Troubleshooting
+You could have problems with the script, in that case create the extensions directory
