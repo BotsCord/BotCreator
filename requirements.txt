@@ -1,3 +1,4 @@
 inquirerpy
 emoji
 discord
+requests
