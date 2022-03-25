@@ -33,7 +33,7 @@ jobs:
           fetch-depth: 0
       - name: Set archive name
         run: |
-          ARCHIVE_NAME=${{ env.project-name }}-${{ matrix.os }}-git describe --always
+          ARCHIVE_NAME=${{ env.project-name }}-${{ matrix.os }}-`git describe --always`
           GHASH=${{ env.project-name }}-`git describe --always`
           
           echo "Archive name set to: $ARCHIVE_NAME"
@@ -62,7 +62,7 @@ jobs:
       # This step exists for debugging.  Such as checking if data files were included correctly by PyInstaller.
       - name: List distribution files
         run: |
-          GHASH=${{ env.project-name }}-${{ matrix.os }}-git describe --always
+          GHASH=${{ env.project-name }}-${{ matrix.os }}-`git describe --always`
           echo $GHASH
           find dist
       # Archive the PyInstaller build using the appropriate tool for the platform.
